@@ -12,9 +12,8 @@ LR_MODEL = 'lr_model'
 
 
 def process(spark, train_data, test_data):
-    #train_data - путь к файлу с данными для обучения модели
-    #test_data - путь к файлу с данными для оценки качества модели
-    #Ваш код
+    #train_data - path to train data
+    #test_data - path to test data
     train = spark.read.parquet(train_data)
     test = spark.read.parquet(test_data)
     cols = train.drop('ad_id','ctr').columns
