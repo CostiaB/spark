@@ -9,9 +9,8 @@ LR_MODEL = 'lr_model'
 
 
 def process(spark, input_file, output_file):
-    #input_file - путь к файлу с данными для которых нужно предсказать ctr
-    #output_file - путь по которому нужно сохранить файл с результатами [ads_id, prediction]
-    #Ваш код
+    #input_file - data for ctr prediction
+    #output_file - path to final predictions [ads_id, prediction]
     from pyspark.ml.pipeline import PipelineModel
 
     validation = spark.read.parquet(input_file)
