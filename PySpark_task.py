@@ -6,7 +6,6 @@ from pyspark.sql import functions as F
 from pyspark.sql import Window
 
 def process(spark, input_file, target_path):
-    # TODO Ваш код
     click = spark.read.parquet(input_file)
     #define window
     window = Window.partitionBy("ad_id")
